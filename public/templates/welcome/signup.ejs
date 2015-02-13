@@ -1,0 +1,32 @@
+<h1> Sign Up </h1>
+
+<div class="signup">
+    <% if (typeof(errorMessages) != 'undefined') { %>
+        <div class="error-messages">
+          <% errorMessages.forEach(function(err){ %>
+              <p> <%= err %> </p>
+          <% }); %>
+        </div>
+    <% }%>
+
+    <form action="/signup" method="post" >
+        <input type="hidden" name="crumb" value="<%= crumb %>"/>
+        <div class="form-field">
+            Email: <input type="text" name="email" />
+        </div>
+
+        <div class="form-field">
+            Name: <input type="text" name="name" />
+        </div>
+
+        <div class="form-field">
+            Password: <input type="password" name="password" />
+        </div>
+
+        <div class="form-field">
+            Confirm Password: <input type="password" name="password_confirmation" />
+        </div>
+
+        <input type="submit" name="Create" />
+    </form>
+</div>
